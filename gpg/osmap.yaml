@@ -1,0 +1,3 @@
+RedHat:
+  packages:
+    - rng-tools

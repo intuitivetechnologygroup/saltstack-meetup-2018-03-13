@@ -1,0 +1,13 @@
+{% import_yaml "gpg/defaults.yaml" as defaults %}
+{% import_yaml "gpg/osmap.yaml" as osmap %}
+
+{% set gpg = salt['grains.filter_by'](
+  defaults,
+  merge=salt['grains.filter_by'](
+        osmap,
+        grain='os_family',
+        merge=salt['pillar.get']('gpg', {}),
+        ),
+  base = 'gpg',
+)
+%}
