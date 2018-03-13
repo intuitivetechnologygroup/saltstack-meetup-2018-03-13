@@ -29,14 +29,18 @@ Run this command to start a test container:
 docker run --rm -d -v $(pwd):/opt -v $(pwd)/gpg:/srv/salt/gpg -h salt-master-sandbox --name salt-master-sandbox simplyadrian/allsalt:centos_master_2017.7.2
 ```
 
-Now we want to shell into the container and run the state:
+Let's shell into the container and verify our state is in place:
 
 ```bash
 docker exec -it salt-master-sandbox bash
 
 # ensure the state is in the right place
 ls /srv/salt/gpg
+```
 
+Now we can run the state and verify a key was generated:
+
+```bash
 # run the state
 salt-call -l debug state.apply gpg
 
@@ -49,3 +53,8 @@ Exit the shell and kill the container
 ```bash
 docker kill salt-master-sandbox
 ```
+
+
+## <a name='setup-harness'></a> Implement the Test Harness
+
+Follow the install instructions in the `formula-test-harness` [docs](https://github.com/intuitivetechnologygroup/formula-test-harness#-install)
