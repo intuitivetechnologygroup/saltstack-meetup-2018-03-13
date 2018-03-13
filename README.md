@@ -42,3 +42,9 @@ salt-call -l debug state.apply gpg
 # verify the key was generated
 salt-call gpg.list_keys gnupghome='/etc/salt/gpgkeys'
 ```
+
+Exit the shell and kill the container
+
+```bash
+docker kill salt-master-sandbox
+```
