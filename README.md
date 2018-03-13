@@ -73,3 +73,21 @@ make setup
 ```bash
 make test-centos_master_2017.7.2
 ```
+
+
+## <a name='travis'></a> Run tests in Travis
+
+* go to [travis-ci.org](https://travis-ci.org/) and create an account if you don't have one
+* on the left side of the screen click on the `+` next to `My Repositories`
+* search for `saltstack-meetup` (if it does not show up try syncing your account and search again)
+* click on the gray toggle thing next to the repository name
+* commit and push the changes to your fork
+* view the test status here: https://travis-ci.org/YOUR-GITHUB-USERNAME/saltstack-meetup-2018-03-13
+
+
+## <a name='dojo'></a> DOJO
+
+Dig into it...
+
+* write another test
+* your ideas?
