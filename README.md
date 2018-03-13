@@ -58,3 +58,18 @@ docker kill salt-master-sandbox
 ## <a name='setup-harness'></a> Implement the Test Harness
 
 Follow the install instructions in the `formula-test-harness` [docs](https://github.com/intuitivetechnologygroup/formula-test-harness#-install)
+
+Start a virtualenv and run the setup:
+
+```bash
+pip install -U virtualenv
+virtualenv .venv
+source .venv/bin/activate
+make setup
+```
+
+Run the centos test:
+
+```bash
+make test-centos_master_2017.7.2
+```
