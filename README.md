@@ -21,6 +21,7 @@ This test harness utilizes [allsalt](https://github.com/simplyadrian/allsalt) to
 
 This demo is using a trimmed down version of the [gpg-formula](https://github.com/meganlkm/gpg-formula).
 
+### Run through a manual test
 
 Run this command to start a test container:
 
