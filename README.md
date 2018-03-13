@@ -20,3 +20,25 @@ This test harness utilizes [allsalt](https://github.com/simplyadrian/allsalt) to
 ## <a name='example-formula'></a> Example Formula
 
 This demo is using a trimmed down version of the [gpg-formula](https://github.com/meganlkm/gpg-formula).
+
+
+Run this command to start a test container:
+
+```bash
+docker run --rm -d -v $(pwd):/opt -v $(pwd)/gpg:/srv/salt/gpg -h salt-master-sandbox --name salt-master-sandbox simplyadrian/allsalt:centos_master_2017.7.2
+```
+
+Now we want to shell into the container and run the state:
+
+```bash
+docker exec -it salt-master-sandbox bash
+
+# ensure the state is in the right place
+ls /srv/salt/gpg
+
+# run the state
+salt-call -l debug state.apply gpg
+
+# verify the key was generated
+salt-call gpg.list_keys gnupghome='/etc/salt/gpgkeys'
+```
